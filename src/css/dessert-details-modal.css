@@ -1,0 +1,285 @@
+/*------modal------*/
+.overlay-details {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    overscroll-behavior: contain;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.overlay-details.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+html:has(.overlay-details.is-open),
+body:has(.overlay-details.is-open) {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+.modal {
+    border-radius: var(--radius-card);
+    width: 335px;
+    height: 90vh;
+    max-height: 560px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay-details:not(.is-open) .modal {
+    transform: translate(-50%, -100%) scale(0.9);
+}
+
+.modal-details-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base);
+}
+
+.modal-icon-close {
+    fill: var(--main-color);
+    stroke: var(--main-color);
+
+}
+
+.modal-details-close:hover,
+.modal-details-close:focus-visible {
+    transform: scale(1.1);
+    outline: none;
+}
+
+.modal-details-close:hover .modal-icon-close,
+.modal-details-close:focus-visible .modal-icon-close {
+    transform: scale(1.1);
+    outline: none;
+}
+
+.modal-info {
+    padding: 64px 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-info::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-info::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-dark);
+    border-radius: 10px;
+}
+
+.modal-img-thumb {
+    width: 100%;
+    height: 221.25px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto;
+    padding-right: 8px; */
+    flex-grow: 1;
+}
+
+.modal-details-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.modal-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.modal-rating {
+    color: var(--main-color);
+    display: block;
+    margin-bottom: 24px;
+}
+
+.modal-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.modal-ingredients strong {
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.modal-ingredients {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.modal-sub-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding: 6px 10px 10px 10px;
+}
+
+.to-order-btn {
+    border: none;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-pill);
+    padding: 10px 24px;
+    width: 295px;
+    height: 44px;
+    cursor: pointer;
+    will-change: transform;
+        transition: transform var(--transition-base),
+            background-color var(--transition-base),
+            border-color var(--transition-base);
+}
+
+.to-order-btn:hover,
+.to-order-btn:focus {
+    background-color: #ffffff;
+    border: 2px solid var(--main-color);
+    transform: scale(1.03);
+
+    cursor: pointer;
+}
+
+.to-order-btn:active {
+    background-color: var(--color-primary-light);
+    outline: 2px solid var(--main-color);
+    transform: scale(1);
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 704px;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .modal-info {
+        padding: 64px 32px 112px;
+    }
+
+    .modal-img-thumb {
+        height: 480px;
+        margin-bottom: 24px;
+        border-radius: var(--radius-card);
+    }
+
+    .modal-sub-btn {
+        justify-content: flex-start;
+        padding: 6px 16px 12px 0px;
+    }
+
+    .to-order-btn {
+        width: 310px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .modal {
+        width: 1312px;
+        height: 611px;
+        max-height: none;
+    }
+
+    .modal-info {
+        flex-direction: row;
+        align-items: stretch;
+        padding: 64px 64px 112px;
+        gap: 24px;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .modal-img-thumb {
+        width: 580px;
+        height: 435px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+        border-radius: var(--radius-card);
+    }
+
+    .modal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .modal-content-wrapper {
+        flex-grow: 1;
+        text-align: left;
+        height: 435px;
+        overflow-y: auto;
+        padding: 0 20px 20px 5px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-primary-dark) var(--bg-color);
+    }
+
+.modal-content-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content-wrapper::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+}
+
+.modal-content-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-dark);
+    border-radius: 10px;
+    transition: background-color var(--transition-base);
+}
+
+.modal-content-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #a35c5c;
+}
+
+    .modal-details-title {
+        font-size: 40px;
+    }
+}

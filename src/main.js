@@ -1,0 +1,9 @@
+import './js/header.js';
+import './js/popular-products.js';
+import './js/dessert-list.js';
+import './js/about-us.js';
+import './js/feedback.js';
+import './js/faq-section.js';
+import './js/footer-jear.js';
+import './js/order-modal.js';
+import './js/dessert-details.js';

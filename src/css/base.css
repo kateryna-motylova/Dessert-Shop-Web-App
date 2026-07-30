@@ -1,0 +1,33 @@
+:root {
+  --main-font: 'Work Sans', 'Comfortaa', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-heading: 'Comfortaa', sans-serif;
+
+  --main-color: #080c0c;
+  --bg-color: #f5fdfd;
+  --color-primary: #f19898;
+  --color-primary-dark: #c07979;
+  --color-primary-light: #f5b6b6;
+
+  --radius-pill: 100px;
+  --radius-card: 16px;
+
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --section-padding: 64px;
+  --section-padding-desktop: 80px;
+
+  scroll-behavior: smooth;
+}
+
+/* Added smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  color: var(--main-color);
+  background-color: var(--bg-color);
+}

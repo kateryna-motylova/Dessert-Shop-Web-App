@@ -1,0 +1,295 @@
+@import "css-star-rating/css/star-rating.css";
+
+.feedback-section {
+    overflow: hidden;
+    position: relative;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.feedback-section .swiper.feedback-swiper {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    padding-bottom: 96px;
+}
+
+.feedback-section .swiper-slide {
+    display: flex;
+    height: auto;
+    transition: opacity var(--transition-base);
+    opacity: 0;
+}
+
+.feedback-section .swiper-slide.swiper-slide-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.feedback-pagination {
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feedback-section .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.feedback-section .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 0;
+    transform: none;
+    bottom: 18px;
+}
+
+.feedback-section .feedback-swiper .feedback-pagination {
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.feedback-section .feedback-swiper .feedback-pagination .swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+
+.feedback-section .feedback-slide-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border: solid 2px var(--main-color);
+    background-color: var(--bg-color);
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    cursor: pointer;
+    top: auto;
+    bottom: 0;
+    transform: none;
+    margin: 0;
+    transition: background-color var(--transition-base);
+}
+
+.feedback-section .feedback-slide-btn:focus,
+.feedback-section .feedback-slide-btn:hover {
+    background-color: var(--color-primary);
+}
+
+.feedback-section .feedback-slide-btn:active {
+    background-color: var(--color-primary-dark);
+}
+
+.feedback-section .feedback-slide-btn:disabled {
+    border: var(--bg-color);
+}
+
+.feedback-section .feedback-slide-btn svg {
+    fill: var(--main-color);
+    stroke: var(--main-color);
+}
+
+.feedback-section .feedback-slide-btn.button-prev {
+    left: auto;
+    right: 64px;
+}
+
+.feedback-section .feedback-slide-btn.button-next {
+    left: auto;
+    right: 0;
+}
+
+.feedback-h {
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--main-color);
+}
+
+.feedback-p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: var(--main-color);
+    margin: 0 auto 40px auto;
+    max-width: 100%;
+}
+
+.feedback-card {
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    width: 100%;
+    min-height: 209px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-wrapper .star-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating-wrapper .star {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.feedback-text {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--main-color);
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.feedback-author {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--main-color);
+    margin-top: auto;
+}
+
+.feedback-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 200px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: transparent;
+}
+
+.feedback-loader .spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--main-color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .feedback-section {
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+    }
+
+    .feedback-p {
+        max-width: none;
+        width: max-content;
+        white-space: nowrap;
+    }
+
+    .feedback-section .swiper.feedback-swiper {
+        padding-bottom: 64px;
+    }
+
+    .feedback-section .swiper-slide {
+        pointer-events: auto;
+    }
+
+    .feedback-section .swiper-slide {
+        transition: opacity var(--transition-base);
+    }
+
+    .feedback-section .swiper-slide.slide-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .feedback-card {
+        min-height: 233px;
+    }
+
+    .feedback-pagination {
+        position: absolute;
+        transform: translateY(50px);
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .feedback-section .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+    .feedback-section .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .feedback-section .feedback-slide-btn {
+        top: calc(50% - 32px);
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    .feedback-section .feedback-slide-btn.button-prev {
+        left: -24px;
+        right: auto;
+    }
+
+    .feedback-section .feedback-slide-btn.button-next {
+        right: -24px;
+        left: auto;
+    }
+
+    .feedback-section .feedback-swiper .swiper-pagination.feedback-pagination {
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(48px);
+        justify-content: center;
+        width: 100%;
+        gap: 9px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .feedback-section {
+        padding-top: var(--section-padding-desktop);
+        padding-bottom: var(--section-padding-desktop);
+    }
+
+    .feedback-h {
+        font-size: 48px;
+    }
+
+    .feedback-p {
+        margin-bottom: 80px;
+    }
+
+    .feedback-card {
+        padding: 32px;
+    }
+}

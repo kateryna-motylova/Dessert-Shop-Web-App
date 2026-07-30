@@ -1,0 +1,39 @@
+<section class="dessert-list popular-products-list" id="desserts">
+    <div class="container">
+
+        <h2 class="section-title">Солодощі</h2>
+        <p class="section-subtitle">Спробуйте наші смачні десерти, які вас здивують!</p>
+
+        <div class="dessert-list__filters">
+
+            <ul class="dessert-list__categories js-categories" aria-label="Filter by category"></ul>
+
+
+            <div class="dessert-list__select-wrap">
+                <div class="custom-select js-custom-select">
+                    <button class="custom-select__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="custom-select__label">Всі десерти</span>
+                        <svg width="24" height="24" aria-hidden="true">
+                            <use href="/img/sprite.svg#icon-keyboard_arrow_down"></use>
+                        </svg>
+                    </button>
+                    <ul class="custom-select__dropdown" role="listbox"></ul>
+                </div>
+            </div>
+
+        </div>
+
+        <ul class="dessert-list__grid js-dessert-grid" aria-label="Desserts catalog"></ul>
+
+        <div class="dessert-list__loader js-dessert-loader" hidden>
+            <span class="loader"></span>
+        </div>
+
+        <div class="dessert-list__load-more-wrap">
+            <button type="button" class="btn btn--outline dessert-list__load-more js-load-more" hidden>
+                Завантажити ще
+            </button>
+        </div>
+
+    </div>
+</section>

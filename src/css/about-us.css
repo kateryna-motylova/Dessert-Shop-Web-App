@@ -1,0 +1,122 @@
+.about-us-section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-us-description {
+  font-family: var(--font-body);
+  max-width: 768px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+
+.about-us-section .swiper.contact-us-gallery {
+  position: relative;
+  overflow: visible;
+}
+
+.contact-us-gallery-list {
+  flex-direction: column;
+}
+
+.about-us-section .swiper-slide:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.about-us-slide-btn,
+.about-us-pagination {
+  display: none;
+}
+
+.about-us-slide-btn.button-prev {
+  left: -23px;
+}
+
+.about-us-slide-btn.button-next {
+  right: -23px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .contact-us-gallery-list {
+    flex-direction: row;
+  }
+
+  .about-us-section .swiper-slide {
+    opacity: 0;
+  }
+
+  .about-us-section .swiper-slide-visible {
+    opacity: 1;
+  }
+
+  .about-us-section .swiper-slide:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .about-us-slide-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border: solid 2px var(--main-color);
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: background-color var(--transition-base);
+    stroke: var(--main-color);
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.2;
+    cursor: auto;
+  }
+
+  .about-us-slide-btn:not(.swiper-button-disabled):hover,
+  .about-us-slide-btn:not(.swiper-button-disabled):focus {
+    background-color: var(--color-primary);
+  }
+
+  .about-us-slide-btn:not(.swiper-button-disabled):active {
+    background-color: var(--color-primary-dark);
+  }
+
+  .about-us-pagination {
+    margin-top: 48px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-us-pagination .swiper-pagination-bullet-active {
+    background-color: var(--main-color);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-us-section {
+    padding-top: var(--section-padding-desktop);
+    padding-bottom: var(--section-padding-desktop);
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+}
