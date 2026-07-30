@@ -6,7 +6,7 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
-    base: '/Dessert-Shop-Web-App/', // 
+    base: process.env.VERCEL ? '/' : '/Dessert-Shop-Web-App/',
 
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
